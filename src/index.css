@@ -1,0 +1,271 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+
+    /* Background & Text */
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.1 0 0);
+
+    /* Primary (Indigo) */
+    --primary-50: oklch(0.971 0.014 270.9);
+    --primary-100: oklch(0.941 0.034 272.5);
+    --primary-200: oklch(0.879 0.064 272.9);
+    --primary-300: oklch(0.792 0.119 272.4);
+    --primary-400: oklch(0.679 0.189 272.1);
+    --primary-500: oklch(0.567 0.249 272.1);
+    --primary-600: oklch(0.487 0.278 272.1);
+    --primary-700: oklch(0.412 0.276 272.3);
+    --primary-800: oklch(0.347 0.251 272.5);
+    --primary-900: oklch(0.286 0.201 272.5);
+
+    /* Blue / Info */
+    --blue-50: oklch(0.968 0.018 236.9);
+    --blue-100: oklch(0.935 0.048 237.1);
+    --blue-200: oklch(0.88 0.095 237.2);
+    --blue-300: oklch(0.796 0.156 237.2);
+    --blue-400: oklch(0.686 0.221 237.2);
+    --blue-500: oklch(0.575 0.27 237.2);
+    --blue-600: oklch(0.496 0.27 237.2);
+    --blue-700: oklch(0.423 0.24 237.2);
+    --blue-800: oklch(0.359 0.2 237.2);
+    --blue-900: oklch(0.301 0.153 237.2);
+
+    /* Green / Success */
+    --green-50: oklch(0.971 0.018 155.1);
+    --green-100: oklch(0.94 0.044 155.4);
+    --green-200: oklch(0.881 0.092 155.3);
+    --green-300: oklch(0.793 0.155 155.4);
+    --green-400: oklch(0.669 0.214 155.5);
+    --green-500: oklch(0.553 0.236 155.5);
+    --green-600: oklch(0.471 0.216 155.5);
+    --green-700: oklch(0.395 0.18 155.5);
+    --green-800: oklch(0.33 0.139 155.5);
+    --green-900: oklch(0.272 0.1 155.5);
+
+    /* Red / Danger */
+    --red-50: oklch(0.975 0.019 27.1);
+    --red-100: oklch(0.948 0.051 27.1);
+    --red-200: oklch(0.894 0.106 27.1);
+    --red-300: oklch(0.804 0.177 27.1);
+    --red-400: oklch(0.674 0.251 27.1);
+    --red-500: oklch(0.552 0.27 27.1);
+    --red-600: oklch(0.478 0.25 27.1);
+    --red-700: oklch(0.4 0.209 27.1);
+    --red-800: oklch(0.337 0.16 27.1);
+    --red-900: oklch(0.281 0.115 27.1);
+
+    /* Yellow / Warning */
+    --yellow-50: oklch(0.985 0.026 95.1);
+    --yellow-100: oklch(0.967 0.071 95.1);
+    --yellow-200: oklch(0.925 0.146 95.1);
+    --yellow-300: oklch(0.853 0.221 95.1);
+    --yellow-400: oklch(0.731 0.278 95.1);
+    --yellow-500: oklch(0.611 0.272 95.1);
+    --yellow-600: oklch(0.529 0.228 95.1);
+    --yellow-700: oklch(0.452 0.18 95.1);
+    --yellow-800: oklch(0.381 0.135 95.1);
+    --yellow-900: oklch(0.321 0.098 95.1);
+
+    /* Grey / Neutral */
+    --grey-50: oklch(0.985 0.003 264.4);
+    --grey-100: oklch(0.962 0.007 264.4);
+    --grey-200: oklch(0.914 0.013 264.4);
+    --grey-300: oklch(0.843 0.021 264.4);
+    --grey-400: oklch(0.708 0.027 264.4);
+    --grey-500: oklch(0.556 0.027 264.4);
+    --grey-600: oklch(0.447 0.027 264.4);
+    --grey-700: oklch(0.36 0.024 264.4);
+    --grey-800: oklch(0.262 0.019 264.4);
+    --grey-900: oklch(0.172 0.013 264.4);
+
+    /* Accent Colors */
+    --accent: var(--primary-500);
+    --accent-foreground: oklch(1 0 0);
+
+    /* Border & Inputs */
+    --border: var(--grey-200);
+    --input: var(--grey-200);
+    --ring: var(--primary-500);
+
+    /* Cards & Popovers */
+    --card: oklch(1 0 0);
+    --card-foreground: var(--foreground);
+    --popover: oklch(1 0 0);
+    --popover-foreground: var(--foreground);
+
+    /* Destructive */
+    --destructive: var(--red-500);
+    --destructive-foreground: oklch(1 0 0);
+  }
+
+  .dark {
+    --background: oklch(0.1 0 0);
+    --foreground: oklch(0.985 0 0);
+
+    /* Card & Popover */
+    --card: oklch(0.16 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.16 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+
+    /* Accent */
+    --accent: var(--primary-400);
+    --accent-foreground: oklch(1 0 0);
+
+    /* Border */
+    --border: var(--grey-700);
+    --input: var(--grey-700);
+    --ring: var(--primary-400);
+  }
+    /* Headings */
+  .h1 {
+    font-weight: 600; /* Semi Bold */
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: 0;
+  }
+
+  .h2 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 0;
+  }
+
+  .h3 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0;
+  }
+
+  .h4 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0;
+  }
+
+  .h5 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0;
+  }
+
+  /* Subtitles */
+  .s1 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0;
+  }
+
+  .s2 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+
+  /* Body */
+  .b1 {
+    font-weight: 400; /* Regular */
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+
+  .b2 {
+    font-weight: 500; /* Medium */
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+
+  .b3 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+  .b4 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+  /* Captions */
+  .c1 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+
+  .c2 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+
+  .c3 {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0;
+  }
+
+  /* Label */
+  .label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+
+  /* Button Font */
+  .btn-giant {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+
+  .btn-large {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+  .btn-medium {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+
+  .btn-small {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+
+  .btn-tiny {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0;
+  }
+
+}
