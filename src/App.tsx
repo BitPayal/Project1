@@ -4,6 +4,7 @@ import InputDemo from "./components/Demo/InputDemo"
 import AvatarDemo from "./components/Demo/AvatarDemo"
 import ProgressDemo from "./components/Demo/ProgressDemo"
 import LoaderDemo from "./components/Demo/LOaderDemo"
+import CheckboxDemo from "./components/Demo/CheckboxDemo"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <BadgeDemo/>
       <ProgressDemo/>
       <LoaderDemo/>
+      <CheckboxDemo/>
     </div>
   )
 }
