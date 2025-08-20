@@ -47,13 +47,30 @@ export default function ButtonDemo() {
 
             {/* Rows for sizes */}
             {sizes.map((size) => (
-              <div key={size.key} className="grid grid-cols-7 gap-4 items-center mb-4">
+              <div
+                key={size.key}
+                className="grid grid-cols-7 gap-4 items-center mb-4"
+              >
                 {/* Row label */}
                 <div className="font-medium">{size.label}</div>
 
                 {/* Buttons for each color */}
                 {colors.map((color) => (
-                  <Button key={color} color={color} size={size.key} className="w-full">
+                  <Button
+                    key={color}
+                    color={color}
+                    size={size.key}
+                    className={`
+                      w-full
+                      ${
+                        size.key === "sm"
+                          ? "rounded-full" // most rounded
+                          : size.key === "default"
+                          ? "rounded-lg" // medium rounded
+                          : "rounded-md" // less rounded
+                      }
+                    `}
+                  >
                     {size.label}
                   </Button>
                 ))}
