@@ -1,10 +1,11 @@
 import ButtonDemo from "./components/Demo/ButtonDemo"
-import { Button } from "./components/ui/button"
+import AvatarDemo from "./components/Demo/AvatarDemo"
 
 function App() {
   return (
-    <div>
-      <ButtonDemo/>
+    <div className="p-6 space-y-6">
+      <ButtonDemo />
+      <AvatarDemo/>
     </div>
   )
 }

@@ -28,28 +28,38 @@ export default function ButtonDemo() {
         <CardHeader>
           <CardTitle className="text-xl font-bold">Button Showcase</CardTitle>
           <CardDescription>
-            Buttons of different colors and sizes with hover, active, and focus styles
+            Buttons arranged by size (rows) and color (columns).
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="space-y-6">
-          {colors.map((color) => (
-            <div key={color}>
-              <h3
-                className="font-semibold mb-3 capitalize"
-                style={{ color: `var(--${color}-600)` }}
-              >
-                {color} Buttons
-              </h3>
-              <div className="flex gap-4 flex-wrap">
-                {sizes.map((size) => (
-                  <Button key={size.key} color={color} size={size.key}>
-                    {size.label} {color.charAt(0).toUpperCase() + color.slice(1)}
+        <CardContent className="overflow-x-auto">
+          {/* Table-like layout without borders */}
+          <div className="inline-block min-w-full">
+            {/* Header Row */}
+            <div className="grid grid-cols-7 gap-4 mb-4">
+              <div className="font-semibold">Size</div>
+              {colors.map((color) => (
+                <div key={color} className="font-semibold capitalize">
+                  {color}
+                </div>
+              ))}
+            </div>
+
+            {/* Rows for sizes */}
+            {sizes.map((size) => (
+              <div key={size.key} className="grid grid-cols-7 gap-4 items-center mb-4">
+                {/* Row label */}
+                <div className="font-medium">{size.label}</div>
+
+                {/* Buttons for each color */}
+                {colors.map((color) => (
+                  <Button key={color} color={color} size={size.key} className="w-full">
+                    {size.label}
                   </Button>
                 ))}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </CardContent>
       </Card>
     </div>
